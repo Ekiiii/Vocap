@@ -9,7 +9,6 @@ VOCAP est une application moderne conçue pour faciliter la création et l'édit
 - **Bande Rythmo Interactive** : Visualisation en temps réel avec défilement fluide.
 - **Éditeur de Dialogue** : Interface intuitive pour saisir et synchroniser vos textes.
 - **Support Multi-Pistes** : Importez plusieurs fichiers audio et gérez les volumes.
-- **Transcription par IA** : Utilise Whisper (via `@xenova/transformers`) pour transcrire automatiquement vos vidéos.
 - **Export Haute Qualité** : Exportez vos sessions avec incrustation de la bande rythmo.
 - **Multi-Fenêtre** : Sortie vidéo secondaire pour un setup double écran.
 
