@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #f8fafc;
+
+  /* Stitch / Ultra Modern Pro Tokens */
+  --midnight: #05070a;
+  --panel-glass: rgba(15, 18, 25, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --vocap-red: #e11d48;
+  --accent-glow: rgba(225, 29, 72, 0.4);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--midnight);
+  background-image: radial-gradient(circle at 50% -20%, #1a1c2c 0%, #05070a 100%);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-xl border border-white/5;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+    border-color: var(--border-glass);
+  }
+
+  .squircle-btn {
+    @apply transition-all duration-200 active:scale-95 flex items-center justify-center;
+    border-radius: 12px;
+  }
+
+  .playhead-line {
+    @apply absolute left-1/2 inset-y-0 w-[2px] bg-[--vocap-red] z-30;
+    box-shadow: 0 0 15px var(--accent-glow);
+  }
+
+  .status-pulse {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes pulse-soft {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  /* Gives it more "air" */
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+  background-clip: content-box;
+}
+
+.scroll-mask-bottom {
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
