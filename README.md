@@ -2,7 +2,7 @@
 
 Logiciel de Bande Rythmo open-source pour tous les fandubers.
 
-VOCAP est une application moderne conçue pour faciliter la création et l'édition de bandes rythmo, avec une intégration poussée de l'IA pour la transcription et la synchronisation.
+VOCAP est une application moderne conçue pour faciliter la création et l'édition de bandes rythmo.
 
 ## Caractéristiques
 
